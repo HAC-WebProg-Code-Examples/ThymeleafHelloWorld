@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="auto" xmlns:th="http://www.thymeleaf.org">
+<header th:fragment="my-header">
+    <h3>This is the simple header!</h3>
+</header>
+<header th:fragment="my-personalized-header(name)">
+    <h3 th:text="${name} != null ? ('Welcome, ' + ${name} + '! This is your personalized header!') : 'This is the header!'"></h3>
+</header>
+<header th:fragment="my-customized-header(fragment)">
+    <h3>This is the customized header!</h3>
+    <span th:replace="${fragment}"></span>
+</header>
+<footer th:fragment="my-footer">
+    <h3>This is the footer!</h3>
+</footer>
+</html>

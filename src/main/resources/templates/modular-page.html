@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="auto" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple html page</title>
+</head>
+<body>
+<!--<div th:include="includes :: my-header">-->
+<!--    <h3>-->
+<!--        This is an optional header, will be rendered in case thymeleaf fails to include the right one.-->
+<!--    </h3>-->
+<!--</div>-->
+
+<!--<hr/>-->
+
+<!--<div th:include="~{includes :: my-personalized-header(${name})}">-->
+<!--    <h3>-->
+<!--        This is an optional header, will be rendered in case thymeleaf fails to include the right one.-->
+<!--    </h3>-->
+<!--</div>-->
+
+<!--<hr/>-->
+
+<div th:include="includes :: my-customized-header(~{ :: .inc1})">
+    <h5 class="inc1">This will be added to the included fragment.</h5>
+</div>
+
+<hr/>
+
+<h5>This is the page contents.</h5>
+
+<hr/>
+
+<h3 th:replace="includes :: my-footer">
+    This is an optional footer,
+    will be rendered in case thymeleaf fails to replace with the right one.
+</h3>
+</body>
+</html>
